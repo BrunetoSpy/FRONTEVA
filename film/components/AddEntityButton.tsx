@@ -1,7 +1,5 @@
-// AddEntityButton.tsx
 import React from 'react';
-import { TouchableOpacity, StyleSheet, Text } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { View, StyleSheet, Text, Button, Image } from 'react-native';
 
 interface AddEntityButtonProps {
   onPress: () => void;
@@ -9,10 +7,11 @@ interface AddEntityButtonProps {
 
 const AddEntityButton: React.FC<AddEntityButtonProps> = ({ onPress }) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress}>
-      <Ionicons name="add-circle" size={30} color="#752D59" />
-      <Text style={styles.text}>Agregar Film</Text>
-    </TouchableOpacity>
+    <View style={styles.container}>
+      <Button title="Agregar Film" onPress={onPress} color="#752D59" />
+      {/* Agregar la imagen con require según la ruta de tu imagen */}
+      <Image source={require('../assets/images/AddButton.png')} style={styles.image} />
+    </View>
   );
 };
 
@@ -20,18 +19,13 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    justifyContent: 'center',
     padding: 10,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: '#752D59',
-    marginVertical: 10,
-    marginLeft: 10,
   },
-  text: {
-    marginLeft: 10,
-    fontSize: 18,
-    color: '#752D59',
+  image: {
+    width: 30,
+    height: 30,
+    marginLeft: 5,  // Puedes ajustar el espaciado entre el botón y la imagen según tus preferencias
   },
 });
 
