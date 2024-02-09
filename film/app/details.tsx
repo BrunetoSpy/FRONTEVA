@@ -1,4 +1,4 @@
-import { Feather } from '@expo/vector-icons';
+/*import { Feather } from '@expo/vector-icons';
 import { Stack, useRouter, useLocalSearchParams } from 'expo-router';
 import React, { useEffect, useState } from "react";
 import { Button, Image, ScrollView, Text, YStack } from "tamagui";
@@ -54,7 +54,7 @@ export default function Details() {
       onPress={router.back}
       alignItems={'center'}
       icon={<Feather name="chevron-left" size={16} color="white" />}>
-      <Text color="white">Volver</Text>
+      <Text color="white">GEY</Text>
     </Button>
   );
 
@@ -88,8 +88,9 @@ export default function Details() {
       }
     </Container>
   );
-}
-/*import { Feather } from '@expo/vector-icons';
+}*/
+
+import { Feather } from '@expo/vector-icons';
 import { Stack, useRouter, useLocalSearchParams } from 'expo-router';
 import React from 'react';
 import { Button, Text, YStack } from 'tamagui';
@@ -125,4 +126,3 @@ export default function Details() {
     </Container>
   );
 }
-*/

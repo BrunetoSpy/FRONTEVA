@@ -1,25 +1,37 @@
-import axios from 'axios'
+// BasicPetitions.ts
+import axios from 'axios';
+import { Character, Scene, Film } from '../app/pages/apiTypes';
 
-const baseUrl = 'http://192.168.1.8:8082';
+const baseUrl = 'http://192.168.18.5:8081';
 
-export const fetchFilms = async (ruta:string): Promise<Array<FetchResponses>> => {
-  const url = `${baseUrl}/${ruta}`;
-  const response = await axios.get(url);
-  console.log(response.data);
-  return response.data
+export const fetchEntities = async (route: string): Promise<Array<Character | Scene | Film>> => {
+  try {
+    const url = `${baseUrl}/${route}`;
+    const response = await axios.get(url);
+    return response.data as Array<Character | Scene | Film>;
+  } catch (error) {
+    console.error(`Error al obtener la lista de ${route}:`, error);
+    throw error;
+  }
 };
 
-export const saveFilm = async (ruta:string,form:number) => {
-  const url = `${baseUrl}/${ruta}`;
-  console.log(url)
-  const response = await axios.post(url,form).catch((error)=>{console.log("Error:")});
-  console.log(response?.data);
+export const saveEntity = async (route: string, form: any): Promise<void> => {
+  try {
+    const url = `${baseUrl}/${route}`;
+    await axios.post(url, form);
+  } catch (error) {
+    console.error(`Error al guardar ${route}:`, error);
+    throw error;
+  }
 };
 
-export const deleteFilm = async (ruta: string,id:number) => {
-  const url = `${baseUrl}/${ruta}`;
-  console.log(id)
-  const response = await axios.delete(`${url}/delete/${id}`).catch((error)=>{console.log("Error:")});
-  console.log(response?.data);
-  return "Borrado Exitoso"
+export const deleteEntity = async (route: string, id: number): Promise<string> => {
+  try {
+    const url = `${baseUrl}/${route}/delete/${id}`;
+    await axios.delete(url);
+    return `Borrado exitoso de ${route}`;
+  } catch (error) {
+    console.error(`Error al borrar ${route}:`, error);
+    throw error;
+  }
 };
