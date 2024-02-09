@@ -4,7 +4,7 @@ import { Subtitle } from "~/tamagui.config";
 import { Pressable } from "react-native";
 import React, { useEffect, useState } from "react";
 //import EditModal from "~/app/components/EditModal";
-import { deleteFilm } from "~/api/BasicPetitions";
+import { deleteFilm } from "~/api/api";
 interface BasicCardsProps {
   setShowEditModal: React.Dispatch<React.SetStateAction<boolean>>;
   data: Array<FetchResponses>;

@@ -4,7 +4,7 @@ import { Button, H3, Input, TextArea } from "tamagui";
 import { Stack } from "expo-router";
 import { Cancel } from "axios";
 import { Feather } from "@expo/vector-icons";
-import { saveFilm } from "~/api/BasicPetitions";
+import { saveFilm } from "~/api/api";
 
 const EditModal = ({closeEditModal,isCreate, data, header}: { closeEditModal: () => void, isCreate: boolean, data: any[], header: string}) => {
 

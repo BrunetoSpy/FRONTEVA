@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Modal, View, StyleSheet, Pressable, Image } from 'react-native';
 import { H3, Button, Input } from 'tamagui';
 import { Feather } from '@expo/vector-icons';
-import { saveEntity } from '~/api/BasicPetitions';
+import { saveEntity } from '~/api/api';
 
 interface AddEditEntityModalProps {
   visible: boolean;

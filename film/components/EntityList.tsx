@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import EntityCard from './EntityCard';
 //import { Character, Scene, Film } from '../app/models/Interfaces.tsx';
-import { Character, Scene, Film } from '../app/pages/apiTypes'
+import { Character, Scene, Film } from '../app/models/apiTypes'
 
 interface EntityListProps {
     entities: Array<Character | Scene | Film>; // Utiliza las interfaces definidas
